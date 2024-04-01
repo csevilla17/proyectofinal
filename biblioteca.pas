@@ -2,7 +2,7 @@ program MenuRegistroAlumnos;
 
 var
   opcion: integer;
-  nombre, cedula, usuario, contrasena: string;
+  nombre, cedula, nombreInput, cedulaInput: string;
   archivo: text;
 
 begin
@@ -21,22 +21,34 @@ begin
            readln(nombre);
            write('Ingrese el numero de cedula del alumno: ');
            readln(cedula);
-           write('Ingrese el nombre de usuario: ');
-           readln(usuario);
-           write('Ingrese la contrasena: ');
-           readln(contrasena);
            assign(archivo, 'alumnos.txt');
            rewrite(archivo);
            writeln(archivo, 'Nombre: ', nombre);
            writeln(archivo, 'Cedula: ', cedula);
-           writeln(archivo, 'Usuario: ', usuario);
-           writeln(archivo, 'Contrasena: ', contrasena);
            close(archivo);
            writeln('Alumno registrado correctamente.');
            writeln('Presione Enter para volver al menu.');
+           readln;
          end;
       2: begin
            writeln('Ha seleccionado la opcion 2: Alumno existente');
+           write('Ingrese el nombre del alumno existente: ');
+           readln(nombreInput);
+           write('Ingrese el numero de cedula del alumno existente: ');
+           readln(cedulaInput);
+           writeln('Nombre: ', nombreInput);
+           writeln('Cedula: ', cedulaInput);
+           writeln('Seleccione una opcion:');
+           writeln('1. Registrar préstamos.');
+           writeln('2. Préstamos activos.');
+           writeln('3. Libros disponibles.');
+           writeln('4. Alumnos sancionados.');
+           writeln('5. Renovación.');
+           writeln('6. Devolución.');
+           writeln('7. Ingresar nuevo libro.');
+           writeln('0. Volver al menú principal.');
+           write('Opcion: ');
+           readln(opcion);
          end;
       0: writeln('Saliendo del programa...');
       else
