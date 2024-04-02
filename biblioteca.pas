@@ -1,4 +1,4 @@
-program MenuRegistroAlumnos;
+program biblioteca;
 
 var
   opcion: integer;
